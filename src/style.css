@@ -1,1 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+.palo-bottom {
+  transform: rotate(180deg);
+}
+
+.card {
+  width: 200px;
+}
