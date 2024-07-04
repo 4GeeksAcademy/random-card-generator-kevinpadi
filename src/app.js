@@ -1,4 +1,3 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
 
@@ -19,8 +18,7 @@ function generarCarta() {
   let palos = ["♦", "♥", "♠", "♣"];
 
   function randomNumero(arr) {
-    let index = Math.floor(Math.random() * arr.length);
-    return arr[index];
+    return arr[Math.floor(Math.random() * arr.length)];
   }
 
   let randomPalo = randomNumero(palos);
@@ -30,13 +28,9 @@ function generarCarta() {
   paloBottom.innerHTML = randomPalo;
   numero.innerHTML = randNumero;
 
-  if (randomPalo == "♦" || randomPalo == "♥") {
-    paloTop.style.color = "red";
-    paloBottom.style.color = "red";
-  } else {
-    paloTop.style.color = "black";
-    paloBottom.style.color = "black";
-  }
+  let color = randomPalo == "♦" || randomPalo == "♥" ? 'red' : 'black'
+  paloTop.style.color = color;
+  paloBottom.style.color = color;
 }
 
 botonNuevaCarta.addEventListener("click", generarCarta);
